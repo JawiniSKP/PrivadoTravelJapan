@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/home.css">
+
+  <title>Document</title>
+</head>
+
+<!-- para comentar es ctl+k+c -->
+
+<body>
+
+  <div>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="Home.html">Viajes Japón</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="Home.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recorridos.html">Recorridos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="traductores.html">Traductores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mapa.html">Mapa</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- intro -->
+
+
+    <div style="position: relative;">
+      <img src="img/fondojap.jpg" alt="Japón" width="100%" height="70%" class="img_fluid">
+      <div id="titulo" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="contenedor" id="icon">
+          <img id="logo" src="img/logo.jpg.png" alt="logo" width="500" height="200" class="img_fluid">
+          <img src="img/travel.gif.gif" alt="travel" width="200" height="200" class="img_fluid">
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <img src="" alt="">
+      <div class="container">
+        <div class="text-left">
+          <h4 id="parrafo1">¡Descubre Japón con nuestros expertos! Ofrecemos viajes únicos e inolvidables a los destinos
+            más auténticos
+            y populares del país del sol naciente. Sumérgete en su cultura, gastronomía y tecnología, y experimenta la
+            belleza de este fascinante país. ¡Viaja con nosotros y vive una aventura que nunca olvidarás!</h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- carrusel  -->
+  <!-- carrusel -->
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide">
+        <img src="img/japonG1.gif" alt="Image 1">
+      </div>
+      <div class="slide">
+        <img src="img/AnimeG2.gif" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img/pixelJPG.gif" alt="Image 3">
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <script>
+    // obtener elementos del DOM
+    const carousel = document.querySelector('.carousel');
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+    const slides = carousel.querySelectorAll('.slide');
+  
+    // variables para rastrear el índice de la imagen actual
+    let currentIndex = 0;
+    const lastIndex = slides.length - 1;
+  
+    // función para mostrar la imagen actual y ocultar las demás
+    function showSlide() {
+      slides.forEach((slide, index) => {
+        if (index === currentIndex) {
+          slide.style.display = 'block';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+    }
+  
+    // evento de clic en el botón anterior
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex === 0) {
+        currentIndex = lastIndex;
+      } else {
+        currentIndex--;
+      }
+      showSlide();
+    });
+  
+    // evento de clic en el botón siguiente
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex === lastIndex) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      showSlide();
+    });
+  
+    // mostrar la primera imagen
+    showSlide();
+  </script>
+</div>
+
+
+<!-- fincarrusel -->
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.external/2.2.0/jquery.external.min.js"></script>
+</body>
+
+</html>
